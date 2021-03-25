@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Enkel bruk av 'transition'</title>
     <style>
         html, body { margin: 0; padding: 0; }
-        body { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center;}
+        body { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; transition: background 2s;}
         div {
             background: red;
             height: 200px;
@@ -14,10 +14,22 @@
             padding: 20px;
             text-align: center;
             color: white;
+            transition: background 3s; /* Her spesifiserer me kva me vil animere, og kor lang tid det skal ta */
         }
+        h1 { color: black; transition: color 2s; }
     </style>
 </head>
 <body>
-    <div><h1>Hausnes</h1></div>
+    <div id="boks"><h1>Enkel bruk av transition</h1></div>
+
+    <script>
+        //document.getElementById("boks").addEventListener("click",endreFarge);
+        window.addEventListener("click",endreFarge);
+        function endreFarge(evt){
+            console.log("evt.target = " + evt.target);
+            evt.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            //document.getElementById("boks").style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+        }
+    </script>
 </body>
 </html>
