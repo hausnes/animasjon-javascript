@@ -38,7 +38,7 @@
         //document.getElementById("boks").addEventListener("click",endreFarge);
         window.addEventListener("click",endreFarge);
         function endreFarge(evt){
-            console.log("evt.target = " + evt.target);
+            console.log("evt.target = " + evt.target); // evt.target for å hente ut ulike typar element ein trykker på (body, div, h1, p osv.).
             evt.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16); // https://css-tricks.com/snippets/javascript/random-hex-color/
             //document.getElementById("boks").style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
         }
