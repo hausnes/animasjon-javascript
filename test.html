@@ -6,7 +6,16 @@
     <title>Enkel bruk av 'transition'</title>
     <style>
         html, body { margin: 0; padding: 0; }
-        body { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; transition: background 2s;}
+        html {
+            height: 100%;
+        }
+        body { 
+            width: 100vw; 
+            height: 100%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            transition: background 2s;}
         div {
             background: red;
             height: 200px;
@@ -16,18 +25,21 @@
             color: white;
             transition: background 3s; /* Her spesifiserer me kva me vil animere, og kor lang tid det skal ta */
         }
-        h1 { color: black; transition: color 2s; }
+        h1 { color: black; transition: background 2s; }
     </style>
 </head>
 <body>
-    <div id="boks"><h1>Enkel bruk av transition</h1></div>
+    <div id="boks">
+        <h1>Enkel bruk av transition</h1>
+        <p>Trykk kvar som helst i dokumentet, og bakgrunnsfargen vil endre seg.</p>
+    </div>
 
     <script>
         //document.getElementById("boks").addEventListener("click",endreFarge);
         window.addEventListener("click",endreFarge);
         function endreFarge(evt){
             console.log("evt.target = " + evt.target);
-            evt.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            evt.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16); // https://css-tricks.com/snippets/javascript/random-hex-color/
             //document.getElementById("boks").style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
         }
     </script>
